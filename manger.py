@@ -1,6 +1,9 @@
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from info import app, db
+from info import create_app, db
+
+# 根据不同配置名称加载对应的配置
+app = create_app('development')  # create_app类似于工厂方法
 
 manager = Manager(app)
 
